@@ -1,4 +1,4 @@
-import { StudentType } from "../types/user";
+import { StudentType } from "../types/student";
 
 export const MOCKED_STUDENTS_FROM_FAKE_BACKEND: StudentType[] = [
   {

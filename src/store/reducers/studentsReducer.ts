@@ -2,7 +2,7 @@ import {
   StudentsAction,
   StudentActionTypes,
   StudentsState,
-} from "../../types/user";
+} from "../../types/student";
 
 const defaultState: StudentsState = {
   students: [],

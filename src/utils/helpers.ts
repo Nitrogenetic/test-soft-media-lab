@@ -1,4 +1,4 @@
-import { StudentType } from "../types/user";
+import { StudentType } from "../types/student";
 
 export const generateStudentId = (students: StudentType[]) => {
   if (!students?.length) {

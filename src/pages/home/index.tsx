@@ -2,7 +2,7 @@ import React, { FC, memo, useEffect, useState } from "react";
 import { RouteComponentProps } from "@reach/router";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { StudentsState, StudentType } from "../../types/user";
+import { StudentsState, StudentType } from "../../types/student";
 import HomeStudentsList from "./components/HomeStudentsList";
 import {
   addListStudentsAction,
@@ -26,7 +26,7 @@ const Home: FC<HomeProps> = () => {
     return;
   }, []);
 
-  const addStudent = (student: StudentType) => {
+  const addStudent = (student: Omit<StudentType, "id">) => {
     const newStudentWithId = { ...student, id: generateStudentId(students) };
     dispatch(addStudentAction(newStudentWithId));
   };
@@ -37,7 +37,6 @@ const Home: FC<HomeProps> = () => {
     dispatch(editStudentAction(student));
   };
 
-  console.log("students: ", students);
   return (
     <div className="absolute-horizontal-center pt-1vw">
       <HomeStudentsList
